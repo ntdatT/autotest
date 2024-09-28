@@ -1,6 +1,7 @@
 package mooQuickTest;
 
 import org.testng.annotations.Test;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -18,7 +19,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import java.util.Random; 
-public class NewTest {
+public class SignupPage {
 
     private WebDriver driver;
 
@@ -50,14 +51,21 @@ public class NewTest {
          
         return result.toString(); 
     } 
-
+ 
+//    @Test
+//    public void testLogoIsDisplayed() {
+//    	Object homePage;
+//        Assert.assertTrue(homePage.isLogoDisplayed(), "Facebook logo should be displayed on the homepage.");
+//    }
+    
+    
 	@Test(description = "Verify sign-in funtion succcess")
     public void verifySignIn() throws InterruptedException {
     	String filePath = "C:\\Users\\acer\\OneDrive\\Pictures\\download.jpg";
     	String randomString = generateRandomString(10);
+ 
         // Generates a random string of length 10 
         System.out.println("Random String: " + randomString);
-   
     	// Open sign-in
     	driver.findElement(By.xpath("//*[@id=\"header\"]/div/div[2]/div/div[2]/a[2]")).click();
     	//input names
@@ -121,7 +129,70 @@ public class NewTest {
 	    String actualTitle = driver.getTitle();
 	    Assert.assertEquals(actualTitle, expectedTitle);
     }
-
+//	 @Test
+//	    public void testLoginWithValidCredentials() {
+//	        homePage.enterEmail("valid_email@example.com");
+//	        homePage.enterPassword("valid_password");
+//	        homePage.clickLogin();
+//	        // Add assertions based on the expected result of a successful login
+//	    }
+//
+//	    @Test
+//	    public void testLoginWithInvalidCredentials() {
+//	        HomePage homePage = new HomePage(driver);
+//	        homePage.enterEmail("invalid_email@example.com");
+//	        homePage.enterPassword("invalid_password");
+//	        homePage.clickLogin();
+//	        // Add assertions based on the expected result of an invalid login
+//	    }
+//
+//	    @Test
+//	    public void testForgotPasswordLink() {
+//	        HomePage homePage = new HomePage(driver);
+//	        homePage.clickForgotPassword();
+//	        // Add assertions for the Forgot Password page
+//	    }
+//
+//	    @Test
+//	    public void testCreateAccountButton() {
+//	        HomePage homePage = new HomePage(driver);
+//	        homePage.clickCreateAccount();
+//	        // Add assertions for the Create Account popup or page
+//	    }
+//
+//	    @Test
+//	    public void testEmailFieldIsEditable() {
+//	        HomePage homePage = new HomePage(driver);
+//	        homePage.enterEmail("test_email@example.com");
+//	        Assert.assertEquals(driver.findElement(By.id("email")).getAttribute("value"), "test_email@example.com");
+//	    }
+//
+//	    @Test
+//	    public void testPasswordFieldIsEditable() {
+//	        HomePage homePage = new HomePage(driver);
+//	        homePage.enterPassword("test_password");
+//	        Assert.assertEquals(driver.findElement(By.id("pass")).getAttribute("value"), "test_password");
+//	    }
+//
+//	    @Test
+//	    public void testLoginButtonIsClickable() {
+//	        HomePage homePage = new HomePage(driver);
+//	        Assert.assertTrue(driver.findElement(By.name("login")).isEnabled(), "Login button should be clickable.");
+//	    }
+//
+//	    @Test
+//	    public void testForgotPasswordLinkNavigation() {
+//	        HomePage homePage = new HomePage(driver);
+//	        homePage.clickForgotPassword();
+//	        Assert.assertTrue(driver.getCurrentUrl().contains("recover"), "URL should contain 'recover' after clicking Forgot Password.");
+//	    }
+//
+//	    @Test
+//	    public void testCreateAccountButtonNavigation() {
+//	        HomePage homePage = new HomePage(driver);
+//	        homePage.clickCreateAccount();
+//	        // Assert the Create Account page or modal is displayed
+//	    }
     @AfterMethod
     public void afterMethod() { 
         // Clean up after each test method (e.g., close any pop-ups, reset state, etc.)
